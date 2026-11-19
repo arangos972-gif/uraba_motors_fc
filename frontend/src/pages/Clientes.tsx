@@ -35,7 +35,7 @@ interface FormularioCliente {
   ciudad: string;
 }
 
-const API_URL = "http://localhost:3000/api/clientes";
+const API_URL = "https://uraba-motors-fc.onrender.com/api/clientes";
 
 const formularioVacio: FormularioCliente = {
   nombre: "",

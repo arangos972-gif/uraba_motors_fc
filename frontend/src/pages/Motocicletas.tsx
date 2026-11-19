@@ -47,8 +47,8 @@ interface DatosFormulario {
   tipoMotor: string;
 }
 
-const API_MOTOS = "http://localhost:3000/api/motos";
-const API_CLIENTES = "http://localhost:3000/api/clientes";
+const API_MOTOS = "https://uraba-motors-fc.onrender.com/api/motos";
+const API_CLIENTES = "https://uraba-motors-fc.onrender.com/api/clientes";
 
 const formularioVacio: DatosFormulario = {
   clienteId: "",

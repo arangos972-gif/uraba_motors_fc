@@ -33,7 +33,7 @@ export default function Login() {
 
     try {
       const respuesta = await fetch(
-        'http://localhost:3000/api/auth/login',
+        'https://uraba-motors-fc.onrender.com/api/auth/login',
         {
           method: 'POST',
           headers: {

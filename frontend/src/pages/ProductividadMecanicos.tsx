@@ -75,7 +75,7 @@ export default function ProductividadMecanicos() {
       });
 
       const respuesta = await fetch(
-        `http://localhost:3000/api/reportes/mecanicos/productividad?${parametros}`,
+        `https://uraba-motors-fc.onrender.com/api/reportes/mecanicos/productividad?${parametros}`,
         {
           headers: {
             Authorization: `Bearer ${token}`

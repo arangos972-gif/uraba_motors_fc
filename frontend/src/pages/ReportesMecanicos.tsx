@@ -11,7 +11,7 @@ import IngresosPorPeriodo from './IngresosPorPeriodo';
 
 
 
-const API = 'http://localhost:3000/api';
+const API = 'https://uraba-motors-fc.onrender.com/api';
 
 type VistaReporte = 'productividad' | 'detalle' | 'liquidaciones' | 'horarios' | 'clientes' | 'mecanicos' | 'trabajos-cliente' | 'ingresos';
 

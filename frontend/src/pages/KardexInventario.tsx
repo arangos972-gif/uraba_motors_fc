@@ -15,7 +15,7 @@ import { obtenerToken } from '../services/auth';
 
 import './Inventario.css';
 
-const API = 'http://localhost:3000/api';
+const API = 'https://uraba-motors-fc.onrender.com/api';
 
 interface Repuesto {
   id: string;

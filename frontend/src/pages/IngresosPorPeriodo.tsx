@@ -4,7 +4,7 @@ import { RefreshCw } from 'lucide-react';
 import { obtenerToken } from '../services/auth';
 import './IngresosPorPeriodo.css';
 
-const API = 'http://localhost:3000/api/reportes/ingresos';
+const API = 'https://uraba-motors-fc.onrender.com/api/reportes/ingresos';
 
 const MESES = [
   'Enero',

@@ -22,7 +22,7 @@ import { obtenerToken, tienePermiso } from '../services/auth';
 import RegistrarPagoFactura from './RegistrarPagoFactura';
 import './facturacion.css';
 import { descargarFacturaPDF } from './descargarFacturaPDF';
-const API = 'http://localhost:3000/api';
+const API = 'https://uraba-motors-fc.onrender.com/api';
 
 type EstadoFactura =
   | 'PENDIENTE'

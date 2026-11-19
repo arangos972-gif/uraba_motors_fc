@@ -12,7 +12,7 @@ import {
 import { obtenerToken } from '../services/auth';
 import './HorariosLaborales.css';
 
-const API = 'http://localhost:3000/api/horarios-mecanicos';
+const API = 'https://uraba-motors-fc.onrender.com/api/horarios-mecanicos';
 
 interface Mecanico {
   id: string;

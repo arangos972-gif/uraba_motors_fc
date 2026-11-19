@@ -29,7 +29,7 @@ interface TipoServicio {
   activo: number;
 }
 
-const API_URL = "http://localhost:3000/api/catalogo-servicios";
+const API_URL = "https://uraba-motors-fc.onrender.com/api/catalogo-servicios";
 
 export default function CatalogoServicios() {
 

@@ -24,7 +24,6 @@ export default defineConfig(({ mode }) => {
             return null;
           }
 
-          // En desarrollo seguimos usando localhost.
           if (
             mode !== 'production' ||
             !backendPublico
@@ -34,7 +33,7 @@ export default defineConfig(({ mode }) => {
 
           return {
             code: codigo.replaceAll(
-              'http://localhost:3000',
+              'https://uraba-motors-fc.onrender.com',
               backendPublico
             ),
             map: null

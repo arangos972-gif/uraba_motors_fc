@@ -24,7 +24,7 @@ import Ausencias from './Ausencias';
 import Auditoria from './Auditoria';
 
 
-const API = 'http://localhost:3000/api/usuarios';
+const API = 'https://uraba-motors-fc.onrender.com/api/usuarios';
 
 interface Usuario {
   id: string;

@@ -5,7 +5,7 @@ import { obtenerToken } from '../services/auth';
 import './TrabajosPorCliente.css';
 
 const API =
-  'http://localhost:3000/api/reportes/trabajos-cliente';
+  'https://uraba-motors-fc.onrender.com/api/reportes/trabajos-cliente';
 
 interface ClienteTrabajo {
   clienteId: string;

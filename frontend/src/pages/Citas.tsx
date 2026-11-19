@@ -21,7 +21,7 @@ import {
 import { obtenerToken, tienePermiso } from '../services/auth';
 import './Citas.css';
 
-const API = 'http://localhost:3000/api';
+const API = 'https://uraba-motors-fc.onrender.com/api';
 
 interface Cliente {
   id: string;

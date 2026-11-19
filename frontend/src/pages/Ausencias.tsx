@@ -17,9 +17,9 @@ import {
 import { obtenerToken } from '../services/auth';
 import './Ausencias.css';
 
-const API = 'http://localhost:3000/api/ausencias';
+const API = 'https://uraba-motors-fc.onrender.com/api/ausencias';
 const API_MECANICOS =
-  'http://localhost:3000/api/horarios-mecanicos/mecanicos';
+  'https://uraba-motors-fc.onrender.com/api/horarios-mecanicos/mecanicos';
 
 interface Mecanico {
   id: string;

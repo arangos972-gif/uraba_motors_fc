@@ -5,7 +5,7 @@ import { obtenerToken } from '../services/auth';
 import './HorarioMecanicos.css';
 
 const API =
-  'http://localhost:3000/api/reportes/horarios-mecanicos';
+  'https://uraba-motors-fc.onrender.com/api/reportes/horarios-mecanicos';
 
 interface Horario {
   id: string;

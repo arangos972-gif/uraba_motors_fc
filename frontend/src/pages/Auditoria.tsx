@@ -16,7 +16,7 @@ import {
 import { obtenerToken } from '../services/auth';
 import './Auditoria.css';
 
-const API = 'http://localhost:3000/api/auditoria';
+const API = 'https://uraba-motors-fc.onrender.com/api/auditoria';
 
 interface RegistroAuditoria {
   id: string;

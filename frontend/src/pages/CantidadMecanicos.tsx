@@ -5,7 +5,7 @@ import { obtenerToken } from '../services/auth';
 import './CantidadMecanicos.css';
 
 const API =
-  'http://localhost:3000/api/reportes/cantidad-mecanicos';
+  'https://uraba-motors-fc.onrender.com/api/reportes/cantidad-mecanicos';
 
 interface ResumenMecanicos {
   totalMecanicos: number;

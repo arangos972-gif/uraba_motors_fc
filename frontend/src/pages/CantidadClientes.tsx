@@ -5,7 +5,7 @@ import { obtenerToken } from '../services/auth';
 import './CantidadClientes.css';
 
 const API =
-  'http://localhost:3000/api/reportes/clientes';
+  'https://uraba-motors-fc.onrender.com/api/reportes/clientes';
 
 interface ResumenClientes {
   totalClientes: number;

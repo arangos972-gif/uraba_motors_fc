@@ -18,7 +18,7 @@ import './OrdenesTrabajo.css';
 import DetalleEconomicoOrden
   from './DetalleEconomicoOrden';
 import CronometroOrden from './CronometroOrden';
-const API = 'http://localhost:3000/api';
+const API = 'https://uraba-motors-fc.onrender.com/api';
 
 interface OrdenTrabajo {
   id: string;

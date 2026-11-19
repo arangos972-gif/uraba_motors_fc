@@ -19,7 +19,7 @@ import { obtenerToken, tienePermiso } from '../services/auth';
 
 import './Repuestos.css';
 
-const API = 'http://localhost:3000/api/repuestos';
+const API = 'https://uraba-motors-fc.onrender.com/api/repuestos';
 
 interface Categoria {
   id: string;

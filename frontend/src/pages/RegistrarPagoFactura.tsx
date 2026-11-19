@@ -2,7 +2,7 @@
 import { useRef, useState } from 'react';
 import { obtenerToken } from '../services/auth';
 
-const API = 'http://localhost:3000/api';
+const API = 'https://uraba-motors-fc.onrender.com/api';
 
 const medios = [
   'EFECTIVO',

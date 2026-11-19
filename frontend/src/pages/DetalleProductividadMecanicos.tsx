@@ -157,7 +157,7 @@ export default function DetalleProductividadMecanicos() {
       });
 
       const respuesta = await fetch(
-        `http://localhost:3000/api/reportes/mecanicos/detalle?${parametros}`,
+        `https://uraba-motors-fc.onrender.com/api/reportes/mecanicos/detalle?${parametros}`,
         {
           headers: {
             Authorization: `Bearer ${token}`
