@@ -1,0 +1,257 @@
+/* URABÁ MOTORS FC: modo oscuro del panel.
+   Importar este archivo DESPUÉS de Dashboard.css. */
+.dashboard-tema-boton {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #0f172a;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.dashboard-tema-boton:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+.dashboard.tema-oscuro {
+  color-scheme: dark;
+  --uraba-fondo: #0b1220;
+  --uraba-panel: #131e30;
+  --uraba-panel-suave: #1b2b41;
+  --uraba-texto: #e8eef8;
+  --uraba-secundario: #b1c0d3;
+  --uraba-borde: #344760;
+  --uraba-azul: #93c5fd;
+  background: var(--uraba-fondo);
+  color: var(--uraba-texto);
+  min-height: 100vh;
+}
+
+.dashboard.tema-oscuro :is(
+  .dashboard-contenido,
+  .dashboard-main,
+  .dashboard-header,
+  .dashboard-footer
+) {
+  background: var(--uraba-fondo);
+  color: var(--uraba-texto);
+  border-color: var(--uraba-borde);
+}
+
+.dashboard.tema-oscuro .dashboard-sidebar {
+  background: #101a2b;
+  color: var(--uraba-texto);
+  border-color: var(--uraba-borde);
+}
+
+.dashboard.tema-oscuro :is(
+  .dashboard-menu-item,
+  .dashboard-menu-titulo,
+  .dashboard-sidebar-inferior,
+  .dashboard-usuario,
+  .dashboard-header h2,
+  .dashboard-header p,
+  .dashboard-tarjeta,
+  .dashboard-modulo,
+  .dashboard-seccion-titulo,
+  .dashboard-actividad,
+  .dashboard-vista-catalogo
+) {
+  color: var(--uraba-texto);
+  border-color: var(--uraba-borde);
+}
+
+.dashboard.tema-oscuro :is(
+  .dashboard-tarjeta,
+  .dashboard-modulo,
+  .dashboard-actividad,
+  .dashboard-vista-catalogo,
+  .dashboard-servicio-accion,
+  .dashboard-usuario,
+  .dashboard-tarjeta-icono
+) {
+  background: var(--uraba-panel);
+}
+
+.dashboard.tema-oscuro :is(
+  .dashboard-tarjeta p,
+  .dashboard-actividad p,
+  .dashboard-modulo p,
+  .dashboard-tarjeta-pie,
+  .dashboard-usuario span
+) {
+  color: var(--uraba-secundario);
+}
+
+.dashboard.tema-oscuro .dashboard-menu-item.activo {
+  color: #dbeafe;
+  background: #243b60;
+}
+
+.dashboard.tema-oscuro .dashboard-tema-boton {
+  color: var(--uraba-texto);
+  border-color: var(--uraba-borde);
+  background: var(--uraba-panel-suave);
+}
+
+/* Formularios y tablas de cualquier módulo del Dashboard. */
+.dashboard.tema-oscuro .dashboard-main :is(
+  input,
+  select,
+  textarea
+) {
+  background-color: #18263b;
+  border-color: #48607e;
+  color: #f1f5f9;
+  color-scheme: dark;
+}
+.dashboard.tema-oscuro .dashboard-main :is(input, textarea)::placeholder {
+  color: #a9b9cd;
+}
+.dashboard.tema-oscuro .dashboard-main :is(
+  table,
+  th,
+  td
+) {
+  border-color: var(--uraba-borde);
+  color: var(--uraba-texto);
+}
+.dashboard.tema-oscuro .dashboard-main th {
+  background: #263751;
+}
+.dashboard.tema-oscuro .dashboard-main :is(
+  a,
+  a:visited
+) {
+  color: var(--uraba-azul);
+}
+
+/* Tarjetas y paneles de facturación y órdenes. */
+.dashboard.tema-oscuro :is(
+  .facturacion-pagina,
+  .ordenes-pagina,
+  .cronometro-orden
+) {
+  background: var(--uraba-fondo);
+  color: var(--uraba-texto);
+}
+.dashboard.tema-oscuro :is(
+  .facturacion-panel,
+  .facturacion-indicador,
+  .ordenes-tarjeta,
+  .ordenes-detalle,
+  .ordenes-resumen,
+  .ordenes-filtros,
+  .ordenes-vacio,
+  .cronometro-reloj
+) {
+  background: var(--uraba-panel);
+  border-color: var(--uraba-borde);
+  color: var(--uraba-texto);
+}
+.dashboard.tema-oscuro :is(
+  .facturacion-indicador strong,
+  .facturacion-titulo h2,
+  .facturacion-panel h3,
+  .ordenes-titulo h1,
+  .ordenes-tarjeta h3,
+  .ordenes-detalle h4,
+  .cronometro-cabecera h4
+) {
+  color: var(--uraba-texto);
+}
+.dashboard.tema-oscuro :is(
+  .facturacion-titulo p,
+  .facturacion-indicador span,
+  .facturacion-fila > span:first-child,
+  .facturacion-vacio,
+  .facturacion-nota,
+  .ordenes-datos,
+  .ordenes-descripcion,
+  .ordenes-pie,
+  .cronometro-estado,
+  .cronometro-resumen span,
+  .cronometro-sin-registro
+) {
+  color: var(--uraba-secundario);
+}
+.dashboard.tema-oscuro :is(
+  .facturacion-fila,
+  .facturacion-resumen,
+  .facturacion-pestanas,
+  .ordenes-pestanas,
+  .cronometro-resumen
+) {
+  border-color: var(--uraba-borde);
+}
+.dashboard.tema-oscuro :is(
+  .facturacion-total,
+  .facturacion-saldo,
+  .facturacion-pestanas button.seleccionada,
+  .ordenes-pestanas button.activa
+) {
+  background: #233b59;
+  color: #dbeafe;
+}
+.dashboard.tema-oscuro :is(
+  .facturacion-actualizar,
+  .facturacion-volver,
+  .facturacion-ver,
+  .ordenes-recargar,
+  .ordenes-pestanas button,
+  .cronometro-reloj.detenido
+) {
+  background: var(--uraba-panel-suave);
+  border-color: var(--uraba-borde);
+  color: var(--uraba-texto);
+}
+.dashboard.tema-oscuro .cronometro-reloj.activo {
+  background: #113023;
+  border-color: #276749;
+  color: #86efac;
+}
+.dashboard.tema-oscuro .facturacion-total strong,
+.dashboard.tema-oscuro .facturacion-saldo strong {
+  color: #93c5fd;
+}
+
+/* Mantener visibles los indicadores y mensajes de éxito/error. */
+.dashboard.tema-oscuro .facturacion-estado.pendiente {
+  background: #4a3514;
+  color: #fde68a;
+}
+.dashboard.tema-oscuro :is(
+  .facturacion-estado.pagado,
+  .facturacion-estado.completado
+) {
+  background: #123c2a;
+  color: #86efac;
+}
+.dashboard.tema-oscuro .facturacion-estado.anulado {
+  background: #4b2024;
+  color: #fecaca;
+}
+.dashboard.tema-oscuro :is(.facturacion-alerta, .ordenes-error, .cronometro-error) {
+  background: #48232c;
+  color: #fecdd3;
+}
+.dashboard.tema-oscuro :is(.facturacion-exito, .ordenes-exito) {
+  background: #173e32;
+  color: #bbf7d0;
+}
+
+@media (max-width: 650px) {
+  .dashboard-tema-boton span {
+    display: none;
+  }
+  .dashboard-tema-boton {
+    padding: 10px;
+  }
+}

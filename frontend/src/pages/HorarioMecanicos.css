@@ -1,0 +1,272 @@
+.hm-reporte {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: inherit;
+}
+
+.hm-encabezado,
+.hm-mecanico-encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.hm-encabezado {
+  flex-wrap: wrap;
+}
+
+.hm-encabezado h2,
+.hm-mecanico-encabezado h3 {
+  margin: 0;
+  color: inherit;
+}
+
+.hm-encabezado h2 {
+  font-size: 1.3rem;
+}
+
+.hm-encabezado p,
+.hm-mecanico-encabezado p {
+  margin: 5px 0 0;
+  color: inherit;
+  opacity: .72;
+  font-size: .9rem;
+}
+
+.hm-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #1463ad;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hm-boton:disabled {
+  opacity: .58;
+  cursor: not-allowed;
+}
+
+.hm-resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 12px;
+}
+
+.hm-resumen-tarjeta,
+.hm-mecanico {
+  border: 1px solid var(--rm-borde, #e0e6ed);
+  border-radius: 12px;
+  background: var(--rm-fondo, #fff);
+}
+
+.hm-resumen-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 16px;
+}
+
+.hm-resumen-tarjeta span {
+  font-size: .88rem;
+  opacity: .76;
+}
+
+.hm-resumen-tarjeta strong {
+  font-size: 1.45rem;
+}
+
+.hm-nota {
+  margin: -8px 0 0;
+  font-size: .86rem;
+  opacity: .72;
+}
+
+.hm-busqueda {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  max-width: 420px;
+  border: 1px solid var(--rm-borde, #cbd5e1);
+  border-radius: 8px;
+  padding: 0 11px;
+  background: var(--rm-control, #fff);
+}
+
+.hm-busqueda input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  padding: 11px 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.hm-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.hm-lista {
+  display: grid;
+  gap: 14px;
+}
+
+.hm-mecanico {
+  overflow: hidden;
+}
+
+.hm-mecanico-encabezado {
+  justify-content: flex-start;
+  padding: 16px 18px;
+}
+
+.hm-mecanico-encabezado h3 {
+  font-size: 1.05rem;
+}
+
+.hm-avatar {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8f1fb;
+  color: #1463ad;
+  font-weight: 700;
+}
+
+.hm-tabla-contenedor {
+  overflow-x: auto;
+}
+
+.hm-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: .9rem;
+}
+
+.hm-tabla th,
+.hm-tabla td {
+  border-top: 1px solid var(--rm-borde, #e0e6ed);
+  padding: 11px 18px;
+  text-align: left;
+}
+
+.hm-tabla thead th {
+  font-size: .82rem;
+  opacity: .72;
+}
+
+.hm-tabla tbody th {
+  font-weight: 600;
+}
+
+.hm-estado-turno {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 4px 9px;
+  font-size: .77rem;
+  font-weight: 700;
+}
+
+.hm-turno-activo {
+  background: #e1f5e9;
+  color: #18603b;
+}
+
+.hm-turno-inactivo {
+  background: #eef0f3;
+  color: #525d6b;
+}
+
+.hm-sin-horario {
+  opacity: .65;
+  font-size: .83rem;
+}
+
+.hm-estado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 100px;
+  margin: 0;
+  border: 1px dashed var(--rm-borde, #cbd5e1);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  opacity: .78;
+}
+
+.hm-alerta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #fce8e6;
+  color: #84231a;
+}
+
+.hm-boton-alerta {
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+}
+
+.dashboard.tema-oscuro .hm-reporte {
+  --rm-fondo: #172334;
+  --rm-borde: #36475d;
+  --rm-control: #202e42;
+  color: #e9eef6;
+}
+
+.dashboard.tema-oscuro .hm-avatar {
+  background: #263d5a;
+  color: #a9d2ff;
+}
+
+.dashboard.tema-oscuro .hm-turno-activo {
+  background: #1d4737;
+  color: #9ae6b4;
+}
+
+.dashboard.tema-oscuro .hm-turno-inactivo {
+  background: #334053;
+  color: #e0e7f0;
+}
+
+@media (max-width: 600px) {
+  .hm-mecanico-encabezado {
+    padding: 14px;
+  }
+
+  .hm-tabla th,
+  .hm-tabla td {
+    padding: 10px 12px;
+  }
+
+  .hm-boton {
+    width: 100%;
+  }
+}

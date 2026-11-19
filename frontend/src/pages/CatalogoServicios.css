@@ -1,0 +1,374 @@
+
+.catalogo-servicios {
+  width: 100%;
+  color: #17243b;
+}
+
+.catalogo-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.catalogo-encabezado h2 {
+  margin: 0 0 8px;
+  font-size: 25px;
+}
+
+.catalogo-encabezado p {
+  margin: 0;
+  color: #64748b;
+}
+
+.catalogo-actualizar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border: 1px solid #dbe2eb;
+  border-radius: 10px;
+  background: white;
+  color: #17243b;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.catalogo-actualizar:hover {
+  background: #f1f5f9;
+}
+
+.catalogo-buscador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1px solid #dbe2eb;
+  border-radius: 12px;
+  background: white;
+  margin-bottom: 22px;
+}
+
+.catalogo-buscador svg {
+  color: #64748b;
+}
+
+.catalogo-buscador input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: transparent;
+  color: #17243b;
+}
+
+.catalogo-lista {
+  display: grid;
+  gap: 14px;
+}
+
+.catalogo-tarjeta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: white;
+}
+
+.catalogo-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: #eaf2ff;
+  color: #2563eb;
+  border-radius: 12px;
+}
+
+.catalogo-informacion {
+  flex: 1;
+  min-width: 0;
+}
+
+.catalogo-codigo {
+  font-size: 12px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.catalogo-informacion h3 {
+  margin: 5px 0;
+  font-size: 17px;
+}
+
+.catalogo-informacion p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.catalogo-derecha {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.catalogo-derecha strong {
+  white-space: nowrap;
+}
+
+.catalogo-estado {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.catalogo-estado.activo {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.catalogo-estado.inactivo {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.catalogo-error {
+  color: #b91c1c;
+}
+
+@media (max-width: 650px) {
+  .catalogo-encabezado {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .catalogo-tarjeta {
+    flex-wrap: wrap;
+  }
+
+  .catalogo-derecha {
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 66px;
+  }
+}
+
+/* BOTONES DEL CATÁLOGO */
+
+.catalogo-botones {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.catalogo-nuevo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.catalogo-nuevo:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.catalogo-nuevo:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* FORMULARIO */
+
+.catalogo-formulario {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 26px;
+}
+
+.catalogo-formulario-titulo {
+  margin-bottom: 24px;
+}
+
+.catalogo-formulario-titulo h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+.catalogo-formulario-titulo p {
+  color: #64748b;
+  margin: 0;
+}
+
+.catalogo-campos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.catalogo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.catalogo-campo-ancho {
+  grid-column: 1 / -1;
+}
+
+.catalogo-campo label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #17243b;
+}
+
+.catalogo-campo input,
+.catalogo-campo textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #17243b;
+  font: inherit;
+}
+
+.catalogo-campo input:focus,
+.catalogo-campo textarea:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #2563eb;
+}
+
+.catalogo-campo small {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.catalogo-formulario-acciones {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.catalogo-cancelar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.catalogo-exito {
+  padding: 13px 16px;
+  border-radius: 10px;
+  background: #dcfce7;
+  color: #166534;
+  margin-bottom: 18px;
+}
+
+.catalogo-error {
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+@media (max-width: 650px) {
+  .catalogo-campos {
+    grid-template-columns: 1fr;
+  }
+
+  .catalogo-campo-ancho {
+    grid-column: auto;
+  }
+
+  .catalogo-formulario {
+    padding: 18px;
+  }
+
+  .catalogo-botones {
+    width: 100%;
+  }
+}
+
+/* ACCIONES DE CADA TIPO DE SERVICIO */
+
+.catalogo-acciones-tarjeta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.catalogo-boton-editar,
+.catalogo-boton-estado {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.catalogo-boton-editar {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.catalogo-boton-editar:hover:not(:disabled) {
+  background: #dbeafe;
+}
+
+.catalogo-boton-estado {
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1px solid #fed7aa;
+}
+
+.catalogo-boton-estado:hover:not(:disabled) {
+  background: #ffedd5;
+}
+
+.catalogo-boton-editar:disabled,
+.catalogo-boton-estado:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 650px) {
+  .catalogo-acciones-tarjeta {
+    justify-content: flex-start;
+  }
+}

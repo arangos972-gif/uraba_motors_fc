@@ -1,0 +1,104 @@
+
+.cronometro-orden {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+.cronometro-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.cronometro-cabecera svg {
+  color: #2563eb;
+}
+
+.cronometro-cabecera h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cronometro-reloj {
+  padding: 18px 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  font-family: monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 2px;
+}
+
+.cronometro-reloj.activo {
+  color: #16a34a;
+  border-color: #bbf7d0;
+}
+
+.cronometro-reloj.detenido {
+  color: #475569;
+}
+
+.cronometro-estado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.cronometro-indicador {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #94a3b8;
+}
+
+.cronometro-indicador.activo {
+  background: #22c55e;
+  box-shadow: 0 0 0 4px #dcfce7;
+}
+
+.cronometro-resumen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 13px;
+}
+
+.cronometro-resumen span {
+  color: #64748b;
+}
+
+.cronometro-error {
+  padding: 12px;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #991b1b;
+  font-size: 13px;
+}
+
+.cronometro-sin-registro {
+  color: #64748b;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .cronometro-reloj {
+    font-size: 30px;
+  }
+}

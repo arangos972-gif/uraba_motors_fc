@@ -1,0 +1,330 @@
+
+.inicio {
+  font-family: Arial, sans-serif;
+  color: #101d3b;
+  background: #f5f8fc;
+}
+
+.inicio * {
+  box-sizing: border-box;
+}
+
+.inicio-header {
+  min-height: 76px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 8%;
+  gap: 20px;
+}
+
+.inicio-marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 23px;
+  color: #173a99;
+  text-decoration: none;
+}
+
+.marca-icono {
+  font-size: 30px;
+}
+
+.inicio-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.inicio-nav a {
+  color: #152344;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.inicio-nav a:hover {
+  color: #2143b5;
+}
+
+.inicio-hero {
+  min-height: 560px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 70px 20px;
+
+  background:
+    linear-gradient(
+      rgba(7, 20, 43, 0.78),
+      rgba(7, 20, 43, 0.72)
+    ),
+    url('/taller-motos.png') center / cover no-repeat,
+    #10264a;
+}
+
+.hero-contenido {
+  max-width: 780px;
+}
+
+.hero-etiqueta {
+  color: #ff7b22;
+  border: 1px solid #ff7b22;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.inicio-hero h1 {
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1.08;
+  margin: 34px 0 24px;
+}
+
+.inicio-hero h1 span {
+  color: #ff7418;
+}
+
+.inicio-hero p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #e5eaf2;
+  margin-bottom: 35px;
+}
+
+.hero-boton {
+  display: inline-block;
+  background: #2143b5;
+  color: white;
+  text-decoration: none;
+  padding: 17px 42px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.hero-boton:hover {
+  background: #17358f;
+  transform: translateY(-2px);
+}
+
+.inicio-servicios,
+.inicio-nosotros {
+  padding: 80px 8%;
+}
+
+.seccion-encabezado {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.seccion-encabezado h2,
+.inicio-nosotros h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.seccion-encabezado p,
+.inicio-nosotros > p {
+  font-size: 17px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.servicios-grid,
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.servicio-card {
+  background: white;
+  padding: 32px;
+  border-radius: 18px;
+  border: 1px solid #e7ecf3;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+}
+
+.servicio-icono {
+  display: inline-block;
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+.servicio-card h3,
+.beneficios h3 {
+  margin: 0 0 12px;
+}
+
+.servicio-card p,
+.beneficios p {
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.inicio-nosotros {
+  background: #eaf1fb;
+  text-align: center;
+}
+
+.inicio-nosotros > p {
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.beneficios > div {
+  padding: 24px;
+}
+
+.beneficios span {
+  font-size: 32px;
+}
+
+.inicio-footer {
+  background: #101d3b;
+  color: white;
+  text-align: center;
+  padding: 24px;
+}
+
+@media (max-width: 768px) {
+  .inicio-header {
+    flex-direction: column;
+    padding: 18px;
+  }
+
+  .inicio-marca {
+    font-size: 19px;
+  }
+
+  .inicio-nav {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .inicio-hero {
+    min-height: 480px;
+  }
+
+  .inicio-hero p {
+    font-size: 16px;
+  }
+
+  .servicios-grid,
+  .beneficios {
+    grid-template-columns: 1fr;
+  }
+
+  .inicio-servicios,
+  .inicio-nosotros {
+    padding: 55px 22px;
+  }
+}
+
+/* ICONO DEL LOGOTIPO */
+
+.marca-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #2143b5;
+}
+
+/* ICONOS DE LOS SERVICIOS */
+
+.servicio-icono {
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #edf2fb;
+  border-radius: 14px;
+  color: #2143b5;
+  margin-bottom: 18px;
+}
+
+.servicio-card:nth-child(2) .servicio-icono {
+  color: #ff7418;
+}
+
+/* ICONOS DE LOS BENEFICIOS */
+
+.beneficio-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #2143b5;
+  margin-bottom: 14px;
+}
+
+.beneficios > div:nth-child(2) .beneficio-icono {
+  color: #ff7418;
+}
+
+/* BOTÓN DE INICIO DE SESIÓN */
+
+.hero-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.inicio-nosotros {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  gap: 20px 35px;
+  align-items: center;
+  text-align: left;
+}
+
+.nosotros-imagen {
+  grid-column: 1;
+  grid-row: 1 / 4;
+}
+
+.nosotros-imagen img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  border-right: 5px solid #ff7418;
+}
+
+.inicio-nosotros > h2,
+.inicio-nosotros > p,
+.inicio-nosotros > .beneficios {
+  grid-column: 2;
+}
+
+.inicio-nosotros > p {
+  margin: 0;
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .inicio-nosotros {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nosotros-imagen {
+    width: 100%;
+  }
+
+  .nosotros-imagen img {
+    height: 250px;
+  }
+
+  .inicio-nosotros > p {
+    margin: 0 auto;
+  }
+}

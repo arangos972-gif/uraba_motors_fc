@@ -1,0 +1,289 @@
+
+.login-pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f2f5fb;
+  color: #14213d;
+  font-family: Arial, sans-serif;
+}
+
+.login-pagina * {
+  box-sizing: border-box;
+}
+
+.login-header {
+  min-height: 80px;
+  padding: 16px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: white;
+}
+
+.login-marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #2143b5;
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.login-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #334155;
+  font-weight: 600;
+}
+
+.login-volver:hover {
+  color: #2143b5;
+}
+
+.login-principal {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 24px;
+}
+
+.login-contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1100px;
+  min-height: 540px;
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 65px rgba(16, 29, 59, 0.1);
+}
+
+.login-imagen {
+  background:
+    linear-gradient(
+      rgba(9, 29, 69, 0.65),
+      rgba(9, 29, 69, 0.85)
+    ),
+    url('/taller-motos.png') center / cover no-repeat,
+    #102b5c;
+
+  color: white;
+  padding: 48px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.login-imagen-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.login-etiqueta {
+  padding: 9px 15px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffb27a;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.login-imagen h1 {
+  font-size: clamp(35px, 4vw, 52px);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.login-imagen p {
+  color: #dbe7ff;
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 360px;
+}
+
+.login-pie-marca {
+  color: #adc5f3;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-top: 30px;
+}
+
+.login-formulario-panel {
+  padding: 50px 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  background: #edf2ff;
+  color: #2143b5;
+  margin-bottom: 22px;
+}
+
+.login-formulario-panel h2 {
+  margin: 0 0 12px;
+  font-size: 30px;
+}
+
+.login-subtitulo {
+  color: #64748b;
+  margin: 0 0 30px;
+  line-height: 1.6;
+}
+
+.login-formulario-panel form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-formulario-panel label {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.login-campo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #dbe2ed;
+  border-radius: 10px;
+  padding: 0 15px;
+  margin-bottom: 22px;
+  color: #64748b;
+  background: #fff;
+}
+
+.login-campo:focus-within {
+  border-color: #2143b5;
+  box-shadow: 0 0 0 3px rgba(33, 67, 181, 0.1);
+}
+
+.login-campo input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 52px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #14213d;
+}
+
+.login-ver {
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+}
+
+.login-boton {
+  width: 100%;
+  min-height: 54px;
+  border: none;
+  border-radius: 10px;
+  background: #2143b5;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.login-boton:hover {
+  background: #17358f;
+}
+
+.login-boton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.login-error {
+  color: #b42318;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 18px;
+}
+
+.login-ayuda,
+.login-nota {
+  margin-top: 24px;
+  text-align: center;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.login-exito {
+  text-align: center;
+}
+
+.login-exito .login-icono {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-exito p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.login-footer {
+  padding: 22px;
+  text-align: center;
+  color: #64748b;
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  .login-contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .login-imagen {
+    min-height: 230px;
+    padding: 30px;
+  }
+
+  .login-imagen h1 {
+    font-size: 32px;
+  }
+
+  .login-formulario-panel {
+    padding: 35px 28px;
+  }
+
+  .login-principal {
+    padding: 30px 16px;
+  }
+
+  .login-marca {
+    font-size: 17px;
+  }
+
+  .login-volver {
+    font-size: 13px;
+  }
+}

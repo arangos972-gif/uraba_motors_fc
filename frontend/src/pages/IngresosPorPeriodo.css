@@ -1,0 +1,276 @@
+.ip-reporte {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: inherit;
+}
+
+.ip-encabezado,
+.ip-panel-titulo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ip-encabezado h2,
+.ip-panel h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.ip-encabezado p,
+.ip-panel-titulo p {
+  margin: 5px 0 0;
+  font-size: .9rem;
+  opacity: .72;
+}
+
+.ip-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #1463ad;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ip-boton:disabled {
+  opacity: .58;
+  cursor: not-allowed;
+}
+
+.ip-filtros {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ip-filtros label {
+  display: flex;
+  min-width: 180px;
+  flex-direction: column;
+  gap: 6px;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.ip-filtros input,
+.ip-filtros select {
+  box-sizing: border-box;
+  min-width: 0;
+  border: 1px solid var(--rm-borde, #cbd5e1);
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--rm-control, #fff);
+  color: inherit;
+  font: inherit;
+}
+
+.ip-nota {
+  margin: 0;
+  font-size: .88rem;
+  line-height: 1.5;
+  opacity: .74;
+}
+
+.ip-resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+
+.ip-tarjeta,
+.ip-panel {
+  border: 1px solid var(--rm-borde, #e0e6ed);
+  border-radius: 12px;
+  background: var(--rm-fondo, #fff);
+}
+
+.ip-tarjeta {
+  display: flex;
+  min-height: 115px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 17px;
+}
+
+.ip-tarjeta span {
+  font-size: .9rem;
+  opacity: .75;
+}
+
+.ip-tarjeta strong {
+  font-size: 1.45rem;
+  overflow-wrap: anywhere;
+}
+
+.ip-tarjeta small {
+  opacity: .68;
+}
+
+.ip-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px;
+}
+
+.ip-panel h3 {
+  font-size: 1.05rem;
+}
+
+.ip-grafica {
+  display: grid;
+  height: 245px;
+  grid-template-columns: repeat(12, minmax(34px, 1fr));
+  gap: 8px;
+  overflow-x: auto;
+  padding-top: 20px;
+}
+
+.ip-columna {
+  display: flex;
+  min-width: 34px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.ip-valor-mes {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: .68rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: .72;
+}
+
+.ip-barra-contenedor {
+  display: flex;
+  width: 100%;
+  height: 155px;
+  align-items: flex-end;
+  overflow: hidden;
+  border-radius: 6px 6px 0 0;
+  background: #eef2f6;
+}
+
+.ip-barra {
+  width: 100%;
+  min-height: 0;
+  border-radius: 6px 6px 0 0;
+  background: #397bb3;
+  transition: height .2s ease;
+}
+
+.ip-columna-seleccionada .ip-barra {
+  background: #1463ad;
+}
+
+.ip-mes-etiqueta {
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+.ip-tabla-contenedor {
+  overflow-x: auto;
+}
+
+.ip-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: .88rem;
+}
+
+.ip-tabla th,
+.ip-tabla td {
+  border-bottom: 1px solid var(--rm-borde, #e0e6ed);
+  padding: 10px 12px;
+  text-align: right;
+}
+
+.ip-tabla th:first-child,
+.ip-tabla td:first-child {
+  text-align: left;
+}
+
+.ip-tabla thead th {
+  font-size: .8rem;
+  opacity: .72;
+}
+
+.ip-tabla tbody tr:last-child th,
+.ip-tabla tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.ip-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #fce8e6;
+  color: #84231a;
+}
+
+.ip-boton-error {
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+}
+
+.ip-estado {
+  display: grid;
+  min-height: 90px;
+  place-items: center;
+  margin: 0;
+  border: 1px dashed var(--rm-borde, #cbd5e1);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  opacity: .75;
+}
+
+.dashboard.tema-oscuro .ip-reporte {
+  --rm-fondo: #172334;
+  --rm-borde: #36475d;
+  --rm-control: #202e42;
+  color: #e9eef6;
+}
+
+.dashboard.tema-oscuro .ip-barra-contenedor {
+  background: #253448;
+}
+
+.dashboard.tema-oscuro .ip-barra {
+  background: #4a8fcb;
+}
+
+.dashboard.tema-oscuro .ip-columna-seleccionada .ip-barra {
+  background: #78b9ed;
+}
+
+@media (max-width: 600px) {
+  .ip-boton {
+    width: 100%;
+  }
+
+  .ip-panel {
+    padding: 14px;
+  }
+}
