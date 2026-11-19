@@ -20,7 +20,7 @@ import {
 
 import { obtenerToken, tienePermiso } from '../services/auth';
 import RegistrarPagoFactura from './RegistrarPagoFactura';
-import './Facturacion.css';
+import './facturacion.css';
 import { descargarFacturaPDF } from './descargarFacturaPDF';
 const API = 'http://localhost:3000/api';
 
