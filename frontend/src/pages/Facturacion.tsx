@@ -15,7 +15,8 @@ import {
   AlertCircle,
   ArrowLeft,
   Wallet,
-  Download
+  Download,
+  Search
 } from 'lucide-react';
 
 import { obtenerToken, tienePermiso } from '../services/auth';
@@ -29,6 +30,7 @@ type EstadoFactura =
   | 'PAGADO'
   | 'ANULADO';
 
+type FiltroEstado = EstadoFactura | 'TODAS';
 type Vista = 'pendientes' | 'historial';
 
 interface OrdenPendiente {
@@ -187,6 +189,10 @@ export default function Facturacion() {
   const [mensaje, setMensaje] =
     useState('');
 
+  const [busqueda, setBusqueda] = useState('');
+  const [filtroEstado, setFiltroEstado] =
+    useState<FiltroEstado>('TODAS');
+
   // Evita solicitudes duplicadas al hacer doble clic.
   const generandoRef = useRef(false);
 
@@ -235,6 +241,45 @@ export default function Facturacion() {
   useEffect(() => {
     void cargarDatos();
   }, [cargarDatos]);
+
+  const terminoBusqueda = busqueda.trim().toLocaleLowerCase('es-CO');
+  const ordenesFiltradas = ordenes.filter(orden =>
+    [
+      orden.descripcion,
+      orden.clienteNombre,
+      orden.motoPlaca,
+      orden.motoMarca,
+      orden.motoModelo,
+      orden.mecanicoNombre
+    ].some(valor =>
+      valor.toLocaleLowerCase('es-CO').includes(terminoBusqueda)
+    )
+  );
+  const facturasFiltradas = facturas.filter(factura =>
+    (filtroEstado === 'TODAS' || factura.estado === filtroEstado) &&
+    [
+      factura.numero,
+      factura.clienteNombre,
+      factura.motoPlaca ?? ''
+    ].some(valor =>
+      valor.toLocaleLowerCase('es-CO').includes(terminoBusqueda)
+    )
+  );
+  const facturasVigentes = facturas.filter(
+    factura => factura.estado !== 'ANULADO'
+  );
+  const totalFacturado = facturasVigentes.reduce(
+    (total, factura) => total + Number(factura.total || 0),
+    0
+  );
+  const totalRecaudado = facturasVigentes.reduce(
+    (total, factura) => total + Number(factura.totalPagado || 0),
+    0
+  );
+  const saldoPorCobrar = facturasVigentes.reduce(
+    (total, factura) => total + Number(factura.saldoPendiente || 0),
+    0
+  );
 
   // ========================================
   // GENERAR FACTURA
@@ -621,7 +666,32 @@ export default function Facturacion() {
             ).length}
           </strong>
         </div>}
+
+        {puedeVerFacturas && (
+          <>
+            <div className="facturacion-indicador facturacion-indicador-dinero">
+              <span>Total facturado</span>
+              <strong>{moneda(totalFacturado)}</strong>
+            </div>
+
+            <div className="facturacion-indicador facturacion-indicador-dinero">
+              <span>Total recaudado</span>
+              <strong>{moneda(totalRecaudado)}</strong>
+            </div>
+
+            <div className="facturacion-indicador facturacion-indicador-dinero">
+              <span>Saldo por cobrar</span>
+              <strong>{moneda(saldoPorCobrar)}</strong>
+            </div>
+          </>
+        )}
       </div>
+
+      {puedeVerFacturas && (
+        <p className="facturacion-alcance-resumen">
+          Totales calculados sobre las últimas 500 facturas cargadas, sin incluir las anuladas.
+        </p>
+      )}
 
       <div
         className="facturacion-pestanas"
@@ -653,10 +723,26 @@ export default function Facturacion() {
 
       {cargando ? (
         <div className="facturacion-panel">
-          <p>Consultando información...</p>
+          <p role="status">Consultando información...</p>
         </div>
       ) : vista === 'pendientes' && puedeGenerarFacturas ? (
         <div className="facturacion-lista">
+          <div className="facturacion-filtros">
+            <label className="facturacion-busqueda">
+              <Search size={18} aria-hidden="true" />
+              <input
+                type="search"
+                value={busqueda}
+                onChange={evento => setBusqueda(evento.target.value)}
+                placeholder="Buscar por cliente, placa u orden"
+                aria-label="Buscar órdenes pendientes"
+              />
+            </label>
+            <span className="facturacion-resultados" aria-live="polite">
+              {ordenesFiltradas.length} de {ordenes.length} órdenes
+            </span>
+          </div>
+
           {ordenes.length === 0 ? (
             <div className="facturacion-panel">
               <p className="facturacion-vacio">
@@ -664,8 +750,14 @@ export default function Facturacion() {
                 pendientes de facturar.
               </p>
             </div>
+          ) : ordenesFiltradas.length === 0 ? (
+            <div className="facturacion-panel">
+              <p className="facturacion-vacio">
+                No encontramos órdenes que coincidan con la búsqueda.
+              </p>
+            </div>
           ) : (
-            ordenes.map(orden => (
+            ordenesFiltradas.map(orden => (
               <article
                 key={orden.id}
                 className="facturacion-panel"
@@ -732,14 +824,53 @@ export default function Facturacion() {
         </div>
       ) : (
         <div className="facturacion-lista">
+          <div className="facturacion-filtros">
+            <label className="facturacion-busqueda">
+              <Search size={18} aria-hidden="true" />
+              <input
+                type="search"
+                value={busqueda}
+                onChange={evento => setBusqueda(evento.target.value)}
+                placeholder="Buscar por factura, cliente o placa"
+                aria-label="Buscar en el historial de facturas"
+              />
+            </label>
+
+            <label className="facturacion-filtro-estado">
+              <span>Estado</span>
+              <select
+                value={filtroEstado}
+                onChange={evento =>
+                  setFiltroEstado(evento.target.value as FiltroEstado)
+                }
+                aria-label="Filtrar facturas por estado"
+              >
+                <option value="TODAS">Todos</option>
+                <option value="PENDIENTE">Pendientes</option>
+                <option value="PAGADO">Pagadas</option>
+                <option value="ANULADO">Anuladas</option>
+              </select>
+            </label>
+
+            <span className="facturacion-resultados" aria-live="polite">
+              {facturasFiltradas.length} de {facturas.length} facturas
+            </span>
+          </div>
+
           {facturas.length === 0 ? (
             <div className="facturacion-panel">
               <p className="facturacion-vacio">
                 Todavía no hay facturas registradas.
               </p>
             </div>
+          ) : facturasFiltradas.length === 0 ? (
+            <div className="facturacion-panel">
+              <p className="facturacion-vacio">
+                No encontramos facturas que coincidan con los filtros.
+              </p>
+            </div>
           ) : (
-            facturas.map(factura => (
+            facturasFiltradas.map(factura => (
               <article
                 key={factura.id}
                 className="facturacion-panel"

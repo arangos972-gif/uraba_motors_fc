@@ -173,6 +173,9 @@
   .facturacion-fila > span:first-child,
   .facturacion-vacio,
   .facturacion-nota,
+  .facturacion-alcance-resumen,
+  .facturacion-resultados,
+  .facturacion-filtro-estado,
   .ordenes-datos,
   .ordenes-descripcion,
   .ordenes-pie,
@@ -220,6 +223,23 @@
 .dashboard.tema-oscuro .facturacion-total strong,
 .dashboard.tema-oscuro .facturacion-saldo strong {
   color: #93c5fd;
+}
+.dashboard.tema-oscuro .facturacion-indicador-dinero strong {
+  color: #5eead4;
+}
+.dashboard.tema-oscuro :is(
+  .facturacion-busqueda,
+  .facturacion-filtro-estado select
+) {
+  background: var(--uraba-panel-suave);
+  border-color: var(--uraba-borde);
+  color: var(--uraba-texto);
+}
+.dashboard.tema-oscuro .facturacion-busqueda input {
+  color: var(--uraba-texto);
+}
+.dashboard.tema-oscuro .facturacion-busqueda input::placeholder {
+  color: var(--uraba-secundario);
 }
 
 /* Mantener visibles los indicadores y mensajes de éxito/error. */
